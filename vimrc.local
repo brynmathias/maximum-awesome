@@ -11,6 +11,8 @@ if (&t_Co == 256 || has('gui_running'))
     colorscheme desert
   endif
 endif
+" Some perforce things!
+map <leader>p :!p4 edit <C-R>=expand('%:p') <CR>
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
