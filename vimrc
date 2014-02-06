@@ -16,9 +16,12 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles.local
 endif
 
+" python speciffic stuff
+let g:pymode_rope = 0
+" Don't autofold code
+let g:pymode_folding = 0
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
-
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
@@ -46,7 +49,6 @@ set si
 set ai
 set lbr
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
 set tw=80
 set cc=81
 " smart tabs
@@ -80,6 +82,7 @@ nmap <leader><space> :call whitespace#strip_trailing()<CR>
 nmap <leader>g :GitGutterToggle<CR>
 nmap <leader>c <Plug>Kwbd
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <silent> <leader><cr> :noh<cr>
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
